@@ -1,0 +1,34 @@
+.logoWrapper {
+  position: absolute;
+  top: 8%;
+  left: 8%;
+  display: grid;
+  width: 155px;
+  
+  z-index: 2;
+}
+
+.smallDot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0.25rem;
+  display: grid;
+  left: 0px;
+  background: red;
+  border-radius: 50%;
+}
+
+.logoWrapper > h4 {
+  position: absolute;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
+  right: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.logoWrapper > h4 :hover {
+  opacity: 0.65;
+}
