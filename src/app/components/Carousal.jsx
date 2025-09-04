@@ -1,9 +1,8 @@
 import React, { useContext, useRef, useEffect } from "react";
 import SmallPic from "./SmallPic";
 import { useResize } from "../customHook";
-
+import {PlaceContext,StatusContext} from "../page";
 import "../styles/Carousal.css";
-import { PlaceContext, StatusContext } from "../page";
 import { gsap } from "gsap";
 
 let data = require("../data/images.json");
