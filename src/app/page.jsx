@@ -1,18 +1,14 @@
 "use client"
-import React, { useState,useEffect,createContext } from "react";
+import React, { useState,useEffect } from "react";
 import Layout from "./components/Layout";
 import Carousal from "./components/Carousal";
 import Window from "./components/Window";
+import {StatusContext,PlaceContext} from "./contextStore";
 
 
 
 
 
-
-
-
-export const StatusContext = createContext(null);
-export const PlaceContext = createContext(null);
 
 function App() {
   const [start, setStart] = useState(false);
@@ -25,16 +21,16 @@ function App() {
     }
   }, [progress]);
   return (
-    <StatusContext.Provider value={{ start, setStart }}>
-      <PlaceContext.Provider value={{ currentPlace, setCurrentPlace }}>
+    <StatusContext value={{ start, setStart }}>
+      <PlaceContext value={{ currentPlace, setCurrentPlace }}>
         <div className="App">
           <Layout>
             <Window />
             <Carousal setProgress={setProgress} progress={progress}  />
           </Layout>
         </div>
-      </PlaceContext.Provider>
-    </StatusContext.Provider>
+      </PlaceContext>
+    </StatusContext>
   );
 }
 

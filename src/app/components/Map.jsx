@@ -1,7 +1,7 @@
 import React, { useRef, useContext, useEffect, useState } from "react";
 import { TweenMax,gsap } from "gsap";
-import { PlaceContext } from "../page";
-import { StatusContext } from "../page";
+import { PlaceContext, StatusContext} from "../contextStore";
+
 import "../styles/Map.css";
 const data = require("../data/japan_prefectures");
 
@@ -79,7 +79,6 @@ const Map = () =>{
         const anim = () => {
           gsap.set("*", { fill: "transparent" });
 
-          console.log(clickedPlace)
           gsap.to(`#${clickedPlace.prefecture}`, 0.4, {
             fill: "#000000"
           });

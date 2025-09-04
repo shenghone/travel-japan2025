@@ -1,7 +1,7 @@
 import React, { useContext, useRef, useEffect } from "react";
 import SmallPic from "./SmallPic";
 import { useResize } from "../customHook";
-import {PlaceContext,StatusContext} from "../contextStore";
+import {StatusContext,PlaceContext} from "../contextStore";
 import "../styles/Carousal.css";
 import { gsap } from "gsap";
 
@@ -11,7 +11,7 @@ const Carousal = React.memo(({ progress, setProgress })=> {
   const { start } = useContext(StatusContext);
   const { currentPlace } = useContext(PlaceContext);
   const percentage = 1/data.images.length;
-  const carousalRef = useRef(null);
+  const carousalRef = useRef(null); 
   const barRef = useRef(null);
   const [width] = useResize();
   //if the user's screen width is less than 1024 and the user
