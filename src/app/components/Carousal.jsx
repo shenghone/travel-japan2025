@@ -10,7 +10,6 @@ let data = require("../data/images.json");
 const Carousal = React.memo(({ progress, setProgress })=> {
   const { start } = useContext(StatusContext);
   const { currentPlace } = useContext(PlaceContext);
-  const percentage = 1/data.images.length;
   const carousalRef = useRef(null); 
   const barRef = useRef(null);
   const [width] = useResize();

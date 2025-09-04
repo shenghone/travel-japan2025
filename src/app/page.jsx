@@ -14,7 +14,6 @@ function App() {
   const [start, setStart] = useState(false);
   const [currentPlace, setCurrentPlace] = useState(null);
   const [progress, setProgress] = useState(0);
-  //console.log(`The progress is at: ${progress}`)
   useEffect(() => {
     if (Math.round(progress * 100) === 100) {
       setStart(true);
