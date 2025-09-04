@@ -1,6 +1,6 @@
 import React, { useRef, useContext, useEffect } from "react";
 import Image from "next/image";
-import { PlaceContext, StatusContext } from "../page";
+import {PlaceContext,StatusContext} from "../contextStore";
 import gsap from "gsap";
 import "../styles/SmallPic.css";
 

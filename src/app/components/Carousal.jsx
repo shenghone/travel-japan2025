@@ -1,7 +1,7 @@
 import React, { useContext, useRef, useEffect } from "react";
 import SmallPic from "./SmallPic";
 import { useResize } from "../customHook";
-import {PlaceContext,StatusContext} from "../page";
+import {PlaceContext,StatusContext} from "../contextStore";
 import "../styles/Carousal.css";
 import { gsap } from "gsap";
 

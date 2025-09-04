@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useContext, useState } from "react";
 
 import { useResize } from "../customHook";
 import "../styles/Window.css";
-import {PlaceContext} from "../page"
+import {PlaceContext} from "../contextStore";
 import { gsap } from "gsap";
 import Map from "./Map";
 
