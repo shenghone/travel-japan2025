@@ -1,10 +1,10 @@
-import {createContext} from "react";
+import {createContext,useState} from "react";
 
 
 
 
-export const StatusContext = createContext(null);
-export const PlaceContext = createContext(null);
+const StatusContext = createContext(null);
+const PlaceContext = createContext(null);
 
 
 const StatusContextProvider = ({children})=>{
@@ -33,6 +33,7 @@ const PlaceContextProvider = ({children})=>{
     )
 }
 
-
-export default [StatusContextProvider,PlaceContextProvider,StatusContext,PlaceContext] 
+export {
+    StatusContext,StatusContextProvider,PlaceContext,PlaceContextProvider
+}
 

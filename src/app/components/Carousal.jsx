@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useEffect } from "react";
+import React, { useContext, useRef, useEffect,useState } from "react";
 import SmallPic from "./SmallPic";
 import { useResize } from "../customHook";
 import {StatusContext,PlaceContext} from "../contextStore";
@@ -7,12 +7,18 @@ import { gsap } from "gsap";
 
 let data = require("../data/images.json");
 
-const Carousal = React.memo(({ progress, setProgress })=> {
-  const { start } = useContext(StatusContext);
+const Carousal = ()=> {
+  const [progress,setProgress] = useState(0);
+  const {start,setStart} = useContext(StatusContext);
   const { currentPlace } = useContext(PlaceContext);
   const carousalRef = useRef(null); 
   const barRef = useRef(null);
   const [width] = useResize();
+  useEffect(() => {
+    if (Math.round(progress * 100) === 100) {
+      setStart(true);
+    }
+  }, [progress]);
   //if the user's screen width is less than 1024 and the user
   //hasn't select any place, move the carousal closer to the map
   useEffect(() => {
@@ -70,6 +76,6 @@ const Carousal = React.memo(({ progress, setProgress })=> {
       })}
     </section>
   );
-});
+};
 
 export default Carousal;

@@ -13,7 +13,6 @@ const Window = React.memo(function() {
   const rightContainerRef = useRef(null);
   const [width, onLoadWidth] = useResize();
   const [moveToRight, setMoveToRight] = useState(false);
-
   //once hovered in the big picture container, hide text
   const hideText = () => {
     if (currentPlace && leftContainerRef) {
